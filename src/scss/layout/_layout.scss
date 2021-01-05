@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.App{
+display: grid;
+grid-template-columns: 20% 80%;
+
+}
+.flex-row-x-center {
+  display: flex;
+  align-items: center;
+}
+.flex-row-x-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-row-y-center {
+  display: flex;
+  justify-content: center;
+}
+.flex-row-xy-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
