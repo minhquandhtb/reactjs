@@ -7,14 +7,15 @@ import React,{ useState } from "react";
 function App() {
   const [url,setUrl]=useState("http://localhost:4000/products?");
   
-  const handleMenuListItem=(_url)=>{
+  const handleMenu=(_url)=>{
     setUrl('http://localhost:4000/products?'+_url);
   }
+
   return (
     <div className="App">
       <Header />
       <Main url={url}/>
-      <Menu handleMenuListItem={handleMenuListItem}/>
+      <Menu handleMenu={handleMenu}/>
     </div>
   );
 }
