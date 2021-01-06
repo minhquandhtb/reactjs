@@ -7,7 +7,7 @@ function RefineByRatings(props) {
 
   for (let i = 0; i < 5; i++) {
     listRating.push(
-      <li onClick={() => handleMenu("&ratings=" +(i+1))} key={i}>
+      <li onClick={() => handleMenu('rating',"&ratings=" +(i+1))} key={i}>
         <Rating rating={i + 1} />
       </li>
     );

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductWrapper from "./ProductWrapper";
 import Pagination from "./Pagination";
+import ResultTop from "./ResultTop";
 
 function Main(props) {
-  const {url}=props;
+  const {url,handleMenu}=props;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState([]);
@@ -42,13 +43,14 @@ function Main(props) {
   } else {
     return (
       <div className="main-wrapper">
-        <div className="result-top"></div>
+        <ResultTop handleMenu={handleMenu}/>
         <ProductWrapper products={currentProduct} />
         <Pagination
           productsCount={products.length}
           handlePaginate={handlePaginate}
           currentPage={currentPage}
         />
+        
       </div>
     );
   }

@@ -20,6 +20,7 @@ function Menu(props) {
 
   return (
     <div className="menu-wrapper">
+    <button onClick={()=>handleMenu('clear')}>Clear filter</button>
       <MenuList menu={menu} handleMenu={handleMenu} />
       <RefineByRatings handleMenu={handleMenu} />
     </div>
