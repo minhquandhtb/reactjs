@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import ProductWrapper from "./ProductWrapper";
 import Pagination from "./Pagination";
 
-function Main() {
+function Main(props) {
+  const {url}=props;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ function Main() {
   const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(() => {
-    fetch("http://localhost:4000/products?&ratings=4")
+    fetch(url)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -22,7 +23,7 @@ function Main() {
           setError(error);
         }
       );
-  }, []);
+  }, [url]);
   useEffect(() => {
     setCurrentProduct(
       products.slice(0 + 8 * (currentPage - 1), 0 + 8 * (currentPage - 1) + 8)
@@ -33,6 +34,7 @@ function Main() {
     setCurrentPage(pageNumber);
   };
 
+  
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {

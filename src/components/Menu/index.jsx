@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import MenuList from "./MenuList"
 
-function Menu() {
+function Menu(props) {
+  const {handleMenuListItem}=props;
   const [menu, setMenu] = useState([]);
   useEffect(() => {
     fetch("http://localhost:4000/menu")
@@ -18,7 +19,8 @@ function Menu() {
 
   return (
     <div className="menu-wrapper">
-      <MenuList menu={menu}/>
+    
+      <MenuList menu={menu} handleMenuListItem={handleMenuListItem}/>
     </div>
   );
   
