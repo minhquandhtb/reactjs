@@ -6,7 +6,8 @@ import React, { useState } from "react";
 
 var titleType = "",
   rating = "",
-  sort = "";
+  sort = "",
+  search="";
 function App() {
   const [url, setUrl] = useState("http://localhost:4000/products?");
   const handleMenu = (key, _url) => {
@@ -24,16 +25,18 @@ function App() {
       titleType = "";
       rating = "";
       sort = "";
+    } else if(key==="search"){
+search=_url;
     }
 
-    setUrl("http://localhost:4000/products?" + titleType + rating + sort);
+    setUrl("http://localhost:4000/products?" + titleType + rating + sort+search);
   };
 
   return (
     <div className="App">
-      <Header />
-      <Main url={url} handleMenu={handleMenu} />
+      <Header handleMenu={handleMenu}/>
       <Menu handleMenu={handleMenu} />
+      <Main url={url} handleMenu={handleMenu} />
     </div>
   );
 }

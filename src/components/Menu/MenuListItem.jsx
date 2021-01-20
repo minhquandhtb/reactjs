@@ -6,14 +6,14 @@ function MenuListItem(props) {
   const listType = [];
   for (let i = 0; i < type.length; i++) {
     listType.push(
-      <li onClick={() => handleMenu('type',"&type=" + type[i])} key={i}>
+      <li onClick={() => handleMenu('type',`&type=${type[i]}`)} key={i}>
         {type[i]}
       </li>
     );
   }
   return (
     <div>
-      <h5 onClick={() => handleMenu('title',"&title=" + title)}>{title}</h5>
+      <h5 onClick={() => handleMenu('title',`&title=${title}`)}>{title}</h5>
       <ul>{listType}</ul>
     </div>
   );
