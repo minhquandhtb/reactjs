@@ -23,11 +23,4 @@ function MenuList(props) {
     </div>
   );
 }
-
-// MenuList.propTypes = {
-//   menu: PropTypes.array,
-// };
-// MenuList.defaultProps = {
-//   menu: [],
-// };
 export default MenuList;
