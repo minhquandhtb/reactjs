@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 import ResultTop from "./ResultTop";
 
 function Main(props) {
-  const {url,handleMenu}=props;
+  const {url}=props;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState([]);
@@ -43,7 +43,7 @@ function Main(props) {
   } else {
     return (
       <div className="main-wrapper">
-        <ResultTop handleMenu={handleMenu}/>
+        <ResultTop/>
         <ProductWrapper products={currentProduct} />
         <Pagination
           productsCount={products.length}
