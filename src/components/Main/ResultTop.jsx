@@ -7,7 +7,7 @@ function ResultTop() {
 
   const handleSort = (value) => {
     const url = {
-      _url: `&_sort=price&_order=${value}`,
+      _url: value,
       key: "sort",
     };
     const action = setUrl(url);
