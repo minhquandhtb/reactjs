@@ -3,15 +3,17 @@ import { useDispatch } from "react-redux";
 import { setUrl } from "../../actions/url";
 
 function ResultTop() {
-  
   const dispatch = useDispatch();
 
   const handleSort = (value) => {
-    const _url= `&_sort=price&_order=${value}`;
-    const action=setUrl(_url);
+    const url = {
+      _url: `&_sort=price&_order=${value}`,
+      key: "sort",
+    };
+    const action = setUrl(url);
     dispatch(action);
-  }
-  
+  };
+
   return (
     <div className="result-top">
       <select

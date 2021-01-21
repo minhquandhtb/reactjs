@@ -11,9 +11,10 @@ import {  useSelector } from "react-redux";
 //   search = "",
 //   brand = "";
 function App() {
-  const url1 = useSelector(state => state.url.url);
-  
-  
+  const url1 = useSelector(state => state.url._url);
+  console.log(url1);
+  const key=useSelector(state => state.url.key);
+  console.log(key);
   let url ="http://localhost:4000/products?"+url1;
   console.log(url);
   // const [url, setUrl] = useState("http://localhost:4000/products?");
