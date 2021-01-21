@@ -1,6 +1,6 @@
 export const setUrl = (url) => {
   return {
-    type: "SORT",
+    type: "CHANGE_URL",
     payload: url,
   };
 };

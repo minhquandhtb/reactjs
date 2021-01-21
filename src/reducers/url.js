@@ -4,7 +4,7 @@ const initialState = {
 };
 const urlReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SORT":
+    case "CHANGE_URL":
       const newUrl = action.payload;
       state = newUrl;
       return state;
