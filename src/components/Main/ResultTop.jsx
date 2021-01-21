@@ -8,10 +8,8 @@ function ResultTop() {
 
   const handleSort = (value) => {
     const _url= `&_sort=price&_order=${value}`;
-    console.log(_url);
     const action=setUrl(_url);
     dispatch(action);
-    console.log(_url);
   }
   
   return (
