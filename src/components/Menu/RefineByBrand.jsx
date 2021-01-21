@@ -1,15 +1,24 @@
 import React from "react";
-
+import { useDispatch } from "react-redux";
+import { setUrl } from "../../actions/url";
 function RefineByBrand(props) {
-  const { brand, handleMenu } = props;
+  const { brand } = props;
   const listBrand = [];
-  
+  const dispatch = useDispatch();
+  const handleMenu = (key, _url) => {
+    const url = {
+      _url: _url,
+      key: key,
+    };
+    const action = setUrl(url);
+    dispatch(action);
+  };
   for (const iterator of brand) {
     listBrand.push(
       <div
         onClick={() => {
           if (document.getElementById(iterator).checked === false) {
-            handleMenu("brand","");
+            handleMenu("brand", "");
           } else {
             handleMenu("brand", `&brand=${iterator}`);
           }

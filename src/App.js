@@ -2,7 +2,7 @@ import "./scss/styles.scss";
 import Header from "./components/Header/index";
 import Main from "./components/Main/index";
 import Menu from "./components/Menu/index";
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 var titleType = "",
@@ -36,15 +36,13 @@ function App() {
   } else if (key === "brand") {
     brand = _url;
   }
-  console.log(sort);
-  let url = "http://localhost:4000/products?" + sort;
+  let url = "http://localhost:4000/products?" + titleType + rating + sort + search + brand;
   console.log(url);
 
   return (
     <div className="App">
-      {/* <Header handleMenu={handleMenu} /> */}
-      {/* <Menu url={url} handleMenu={handleMenu} /> */}
-      {/* <Main url={url} handleMenu={handleMenu} /> */}
+      <Header />
+      <Menu url={url} />
       <Main url={url} />
     </div>
   );
