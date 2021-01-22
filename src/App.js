@@ -9,6 +9,7 @@ var titleType = "",
   rating = "",
   sort = "",
   search = "",
+  price="",
   brand = "";
 function App() {
   const _url = useSelector((state) => state.url._url);
@@ -30,13 +31,16 @@ function App() {
     titleType = "";
     rating = "";
     sort = "";
+    price="";
     brand = "";
   } else if (key === "search") {
     search = _url;
   } else if (key === "brand") {
     brand = _url;
+  } else if (key === "price") {
+    price = _url;
   }
-  let url = "http://localhost:4000/products?" + titleType + rating + sort + search + brand;
+  let url = "http://localhost:4000/products?" + titleType + rating + sort + search + brand+price;
   console.log(url);
 
   return (

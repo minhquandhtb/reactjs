@@ -4,6 +4,7 @@ import MenuList from "./MenuList";
 import RefineByBrand from "./RefineByBrand";
 import RefineByRatings from "./RefineByRatings";
 import { useDispatch } from "react-redux";
+import RefineByPrice from "./RefineByPrice";
 
 function Menu(props) {
   const { url } = props;
@@ -48,6 +49,7 @@ function Menu(props) {
       <MenuList menu={menu} />
       <RefineByRatings />
       <RefineByBrand brand={brand} />
+      <RefineByPrice/>
     </div>
   );
 }
