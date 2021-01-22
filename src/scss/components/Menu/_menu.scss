@@ -1,4 +1,7 @@
 .menu-wrapper{
     width: 100%;
+    height: 550px;
     grid-column: 1/2;
+    
+    overflow-y: scroll;
 }
