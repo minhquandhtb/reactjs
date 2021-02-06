@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { setUrl } from "../../actions/url";
+import { setUrl } from "./menuSlice";
 import MenuList from "./MenuList";
 import RefineByBrand from "./RefineByBrand";
 import RefineByRatings from "./RefineByRatings";
@@ -49,7 +49,7 @@ function Menu(props) {
       <MenuList menu={menu} />
       <RefineByRatings />
       <RefineByBrand brand={brand} />
-      <RefineByPrice/>
+      <RefineByPrice />
     </div>
   );
 }

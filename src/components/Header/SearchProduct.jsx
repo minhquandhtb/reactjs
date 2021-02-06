@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import { useDispatch } from "react-redux";
-import { setUrl } from '../../actions/url';
+import { setUrl } from "../Menu/menuSlice";
 
 function SearchProduct() {
   const dispatch = useDispatch();
@@ -14,8 +14,11 @@ function SearchProduct() {
   };
   return (
     <div className="search-product">
-      <input placeholder="Search a product" onChange={(value)=>handleMenu("search","&q="+value.target.value)}/>
-      <button >
+      <input
+        placeholder="Search a product"
+        onChange={(value) => handleMenu("search", "&q=" + value.target.value)}
+      />
+      <button>
         <i className="fa fa-search" />
       </button>
     </div>

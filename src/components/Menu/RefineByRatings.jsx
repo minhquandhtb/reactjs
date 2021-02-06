@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Rating from "../Main/Rating";
 import { useDispatch } from "react-redux";
-import { setUrl } from "../../actions/url";
+import { setUrl } from "./menuSlice";
 function RefineByRatings() {
   const listRating = [];
   const dispatch = useDispatch();

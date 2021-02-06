@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setUrl } from "../../actions/url";
+import { setUrl } from "./menuSlice";
 function RefineByBrand(props) {
   const { brand } = props;
   const listBrand = [];

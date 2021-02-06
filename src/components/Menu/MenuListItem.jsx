@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { setUrl } from "../../actions/url";
+import { setUrl } from "./menuSlice";
 
 function MenuListItem(props) {
   const { title, type } = props;

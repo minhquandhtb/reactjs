@@ -9,13 +9,11 @@ var titleType = "",
   rating = "",
   sort = "",
   search = "",
-  price="",
+  price = "",
   brand = "";
 function App() {
-  const _url = useSelector((state) => state.url._url);
-  console.log(_url);
-  const key = useSelector((state) => state.url.key);
-  console.log(key);
+  const _url = useSelector((state) => state.urlChange.stateMainSlice._url);
+  const key = useSelector((state) => state.urlChange.stateMainSlice.key);
 
   if (key === "title" || key === "type") {
     titleType = _url;
@@ -31,7 +29,7 @@ function App() {
     titleType = "";
     rating = "";
     sort = "";
-    price="";
+    price = "";
     brand = "";
   } else if (key === "search") {
     search = _url;
@@ -40,7 +38,14 @@ function App() {
   } else if (key === "price") {
     price = _url;
   }
-  let url = "http://localhost:4000/products?" + titleType + rating + sort + search + brand+price;
+  let url =
+    "http://localhost:4000/products?" +
+    titleType +
+    rating +
+    sort +
+    search +
+    brand +
+    price;
   console.log(url);
 
   return (
